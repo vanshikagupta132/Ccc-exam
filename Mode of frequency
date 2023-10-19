@@ -1,0 +1,76 @@
+
+#include <bits/stdc++.h>
+
+using namespace std;
+
+#define mod 1000000007
+
+#define ll long long
+
+ll gcd(ll a, ll b) { return((b == 0) ? a : gcd(b, a % b)); }
+
+ll lcm(ll a, ll b) { return (b / gcd(a, b)) * a; }
+
+
+
+
+
+int main() {
+
+	// your code goes here
+
+	int tc; cin>>tc;
+
+	while(tc--){
+
+	    map<int,int> map1;
+
+	    map<int,int> map2;
+
+	    
+
+	    int n,short_term; cin>>n;
+
+	    for(int i = 0; i < n; ++i){
+
+	        cin>>short_term;
+
+	        map1[short_term]++;
+
+	    }
+
+	    for(auto it: map1)
+
+	        map2[it.second]++;
+
+
+
+        int num = 0;
+
+        int maxnum = 0;
+
+        
+
+	    for(auto it: map2){
+
+	        if(maxnum < it.second){
+
+	            maxnum = it.second;
+
+	            num = it.first;
+
+	        }
+
+	    }
+
+	    
+
+	    cout<<num<<endl;
+
+	    
+
+	}
+
+	return 0;
+
+}
