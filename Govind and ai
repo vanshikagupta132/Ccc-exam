@@ -1,0 +1,22 @@
+Govind and ai
+def find_least_X(A, B, C, K):
+    low = 0
+    high = K
+
+    while low < high:
+        mid = (low + high) // 2
+        if A * mid * mid + B * mid + C < K:
+            low = mid + 1
+        else:
+            high = mid
+
+    return low
+
+# Input the number of test cases
+T = int(input())
+
+# Process each test case
+for _ in range(T):
+    A, B, C, K = map(int, input().split())
+    result = find_least_X(A, B, C, K)
+    print(result)
